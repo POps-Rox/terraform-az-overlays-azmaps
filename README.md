@@ -86,8 +86,8 @@ module "mod_azmaps" {
 |------|------|
 | [azurerm_maps_account.maps_account](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/maps_account) | resource |
 | [azurerm_maps_creator.maps_creator](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/maps_creator) | resource |
-| [popsrox_resource_name.maps_account](https://registry.terraform.io/providers/POps-Rox/popsrox-utils/latest/docs/data-sources/resource_name) | data source |
-| [popsrox_resource_name.maps_creator](https://registry.terraform.io/providers/POps-Rox/popsrox-utils/latest/docs/data-sources/resource_name) | data source |
+| [popsrox_resource_name.maps_account](https://registry.terraform.io/providers/POps-Rox/azutils/latest/docs/data-sources/resource_name) | data source |
+| [popsrox_resource_name.maps_creator](https://registry.terraform.io/providers/POps-Rox/azutils/latest/docs/data-sources/resource_name) | data source |
 | [azurerm_resource_group.rgrp](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group) | data source |
 
 ## Inputs
