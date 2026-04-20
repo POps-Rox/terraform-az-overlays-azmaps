@@ -1,7 +1,7 @@
 # Copyright (c) Microsoft Corporation.
 # Licensed under the MIT License.
 
-data "azurenoopsutils_resource_name" "maps_account" {
+data "popsrox_resource_name" "maps_account" {
   name          = var.workload_name
   resource_type = "azurerm_maps_account"
   prefixes      = [var.org_name, module.mod_azure_region_lookup.location_short]
@@ -11,7 +11,7 @@ data "azurenoopsutils_resource_name" "maps_account" {
   separator     = "-"
 }
 
-data "azurenoopsutils_resource_name" "maps_creator" {
+data "popsrox_resource_name" "maps_creator" {
   name          = var.workload_name
   resource_type = "azurerm_maps_account"
   prefixes      = [var.org_name, module.mod_azure_region_lookup.location_short]
