@@ -1,10 +1,10 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: tf-az-overlays-azmaps
+  name: terraform-az-overlays-azmaps
   description: Terraform overlay module for Azure Maps
   annotations:
-    github.com/project-slug: POps-Rox/tf-az-overlays-azmaps
+    github.com/project-slug: POps-Rox/terraform-az-overlays-azmaps
     backstage.io/techdocs-ref: dir:.
   tags:
     - terraform
@@ -12,7 +12,7 @@ metadata:
     - azure
     - platform-ops
   links:
-    - url: https://github.com/POps-Rox/tf-az-overlays-azmaps
+    - url: https://github.com/POps-Rox/terraform-az-overlays-azmaps
       title: GitHub Repository
       icon: github
 spec:
