@@ -1,5 +1,51 @@
 # Changelog
 
+## [2.0.0] - 2026-05-12
+
+### ⚠️ Breaking Changes
+
+- Upgraded `hashicorp/azurerm` provider from `~> 3.116` to `~> 4.20`.
+- Minimum Terraform CLI version raised from `>= 1.9` to `>= 1.10`.
+- Added required `location` argument to `azurerm_maps_account` (azurerm 4.x
+  promotes `location` from inferred to required on this resource). The value
+  is sourced from `local.location` (same source used by `azurerm_maps_creator`),
+  so consumers experience no behavior change.
+
+### Behavior Notes
+
+- `azurerm_maps_creator` is **deprecated** in azurerm 4.x and will be removed
+  in 5.x. The resource remains usable for this release; a future major
+  release will drop it (replacement: Azure Maps creator API
+  out-of-band of the Maps account resource).
+
+### Migration Notes for Consumers
+
+- Bump your root `azurerm` provider constraint to `~> 4.20`.
+- Ensure Terraform CLI `>= 1.10`.
+- Set `ARM_SUBSCRIPTION_ID` env var or `subscription_id` in your
+  `provider "azurerm"` block — azurerm 4.x requires it.
+- Module public input/output surface is unchanged. No variable renames or
+  removals.
+
+### Added
+
+- `azapi ~> 2.0` provider declaration in `versions.tf` (root + every example).
+
+### Internal
+
+- Standardized `versions.tf` format across root and all examples.
+- Bumped `required_version` to `>= 1.10` everywhere.
+
+### Cross-module dependency
+
+This module sources two sibling overlays from GitHub
+(`tf-az-overlays-azregionslookup`, `tf-az-overlays-resourcegroup`) which are
+still pinned to `azurerm ~> 3.116`. Production consumers must wait for those
+overlays' Phase 1 PRs to merge before this `2.0.0` can be cleanly initialized.
+Local validation was performed by patching the cached `versions.tf` of those
+submodules during `terraform init -get=false`.
+
+
 ## [Unreleased](https://github.com/Azure/terraform-verified-module/tree/HEAD)
 
 **Merged pull requests:**
