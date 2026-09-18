@@ -26,9 +26,3 @@ variable "maps_account_custom_name" {
   type        = string
   default     = ""
 }
-
-variable "maps_creator_custom_name" {
-  description = "Name of the Azure Maps Creator, generated if not set."
-  type        = string
-  default     = ""
-}

@@ -71,9 +71,3 @@ variable "sku" {
   type        = string
   default     = "G2"
 }
-
-variable "storage_units" {
-  description = "(Required) The storage units to be allocated for the Azure Maps Creator. Integer values from 1 to 100, inclusive."
-  type        = number
-  default     = 10
-}
