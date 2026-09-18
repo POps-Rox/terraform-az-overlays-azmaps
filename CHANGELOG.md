@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.0.0] - 2026-09-17
+
+### ⚠️ Breaking Changes
+
+- Upgraded `hashicorp/azurerm` provider support to 5.x. The root module now allows `>= 5.0, < 6.0`; examples and tests pin to `~> 5.6`.
+- Removed Azure Maps Creator management because `azurerm_maps_creator` was removed in azurerm 5.0 per the official 5.0 upgrade guide. This removes the `maps_creator_custom_name` and `storage_units` inputs and the `maps_creator_name` and `maps_creator_id` outputs.
+
+### Added
+
+- Added mock-provider functional tests for naming precedence, empty-string name fallthrough, resource group creation/use-existing conditionals, tag merging, and location passthrough.
+- CI validate now fails if no Terraform directories are discovered.
+
 ## [2.0.0] - 2026-05-12
 
 ### ⚠️ Breaking Changes
